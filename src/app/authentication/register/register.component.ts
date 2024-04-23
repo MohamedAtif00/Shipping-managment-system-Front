@@ -21,7 +21,7 @@ export class RegisterComponent {
     this.registerForm = new FormGroup
     (
         {
-          username: new FormControl('', [Validators.required],[this.CheckUsername()]),
+          username: new FormControl('', [Validators.required]),
           email: new FormControl('', [Validators.required, Validators.email]),
           password: new FormControl('', [
             Validators.required,
@@ -62,7 +62,7 @@ export class RegisterComponent {
 
   if(this.registerForm.valid)
   {
-    this.authServ.StudentRegister(info).subscribe((data)=>{
+    this.authServ.Register(info).subscribe((data)=>{
 
       console.log(data);
 

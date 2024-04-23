@@ -6,7 +6,7 @@ import { AuthService } from "../Service/auth.service";
 @Injectable({
     providedIn:'root'
 })
-export class DonorCanActivate implements CanActivate{
+export class UserCanActivate implements CanActivate{
 
 
     constructor(private authServ: AuthService, private router: Router) {}
@@ -15,17 +15,17 @@ export class DonorCanActivate implements CanActivate{
       if (this.authServ.token) {
         return this.authServ.AllowAccessToken().pipe(
           map(data => {
-            if (data.role === 'Donor') {
+            if (data.role.toLowerCase() === 'user') {
               return true; // Allow navigation
             } else {
               // Redirect to a different route if not authorized
-              return this.router.createUrlTree(['/auth', 'donor-login']);
+              return this.router.createUrlTree(['/auth', 'login']);
             }
           })
         );
       } else {
         // Redirect to login page if token is not available
-        return this.router.createUrlTree(['/auth', 'donor-login']);
+        return this.router.createUrlTree(['/auth', 'login']);
       }
     }
 

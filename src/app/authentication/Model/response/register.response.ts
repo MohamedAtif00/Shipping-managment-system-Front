@@ -1,4 +1,4 @@
-export interface StudentRegisterResponse{
+export interface RegisterResponse{
     value:{
         userId:string,
         role:string,
@@ -7,11 +7,3 @@ export interface StudentRegisterResponse{
     }
 }
 
-export interface DonorRegisterResponse{
-    value:{
-        userId:string,
-        role:string,
-        username:string,
-        jwtToken:string
-    }
-}

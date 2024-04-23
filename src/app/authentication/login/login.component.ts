@@ -60,7 +60,8 @@ export class LoginComponent implements OnInit{
 
   if(this.loginForm.valid)
   {
-    this.authServ.StudentLogin(info).subscribe((data) => {
+    this.authServ.Login(info).subscribe((data) => {
+      if(!data.value) this.error = (<unknown>data.errors[0]) as Error
       if(data.errors)
       {
         console.log(data.errors[0]);

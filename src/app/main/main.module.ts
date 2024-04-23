@@ -7,8 +7,12 @@ import { JobsListComponent } from './main/jobs-list/jobs-list.component';
 import { CreateJobComponent } from './main/create-job/create-job.component';
 import { MainRoutingModule } from './main-routing/main-routing.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { HttpClientModule } from '@angular/common/http';
 import { JobPostComponent } from './main/jobs-list/job-post/job-post.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JobDetailsComponent } from './main/job-details/job-details.component';
 
 
 
@@ -19,14 +23,17 @@ import { JobPostComponent } from './main/jobs-list/job-post/job-post.component';
     HomeComponent,
     JobsListComponent,
     CreateJobComponent,
-    JobPostComponent
+    JobPostComponent,
+    JobDetailsComponent
   ],
   imports: [
     CommonModule,
      MainRoutingModule,
      HttpClientModule,
-
-     ModalModule.forChild()
+     ModalModule.forChild(),
+     BsDatepickerModule,
+     ReactiveFormsModule,
+     FormsModule
   ]
 })
 export class MainModule { }

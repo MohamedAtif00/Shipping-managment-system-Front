@@ -3,7 +3,7 @@ export interface LocationInfoModel{
     city:string,
     country:string,
     lat:number,
-    lng:number,
+    lon:number,
     country_code:string,
     postCode:string,
     state:string,
@@ -11,5 +11,6 @@ export interface LocationInfoModel{
     display_name:string,
     road:string,
     village:string,
-    neighbourhood:string
+    neighbourhood:string,
+    houseNumber:string
 }
