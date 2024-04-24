@@ -25,3 +25,22 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# Project Name
+
+Shipping Managment System
+
+### Prerequisites
+
+leaflet 
+
+ngx-bootstrap 
+
+bootstrap-icon
+
+Aos 
+glightbox
+
+### LocalHost Ports
+
+Shipping-managment-system - Front https://localhost:4200
