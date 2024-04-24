@@ -10,7 +10,7 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a [routerLink]="['jobs-list']">Browse Jobs</a></li>
+            <li><a [routerLink]="['jobs-list']">Browse Shipping</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -21,7 +21,7 @@
 
           </div>
 
-          <button class="btn-getstarted btn btn-primary  " [routerLink]="['create-job']">Post a Job</button>
+          <button class="btn-getstarted btn btn-primary  " [routerLink]="['create-job']">Post Shipping</button>
           <button class=" btn btn-danger " (click)="LogOut()" *ngIf="auth.token">Log out</button>
         </div>
 

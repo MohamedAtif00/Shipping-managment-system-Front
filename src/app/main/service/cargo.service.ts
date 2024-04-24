@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { environment } from "src/environment/environment";
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Injectable } from "@angular/core";
 export class CargoService{
 
 
-    getSingleCargo:string = 'https://localhost:7001/api/Cargo/';
+    getSingleCargo:string = `${environment.domain}/api/Cargo/`;
 
     constructor(private http:HttpClient){}
 

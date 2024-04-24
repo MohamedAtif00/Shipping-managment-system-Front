@@ -8,6 +8,7 @@ import {  Register } from "../Model/request/register.request";
 import { RegisterResponse } from "../Model/response/register.response";
 import { Observable, map, of } from "rxjs";
 import { GeneralResponse } from "src/app/share/Model/general.response";
+import { environment } from "src/environment/environment";
 
 @Injectable({
     providedIn:'root'
@@ -15,13 +16,11 @@ import { GeneralResponse } from "src/app/share/Model/general.response";
 export class AuthService{
 
 
-    getAllowAccess:string = 'https://localhost:7001/api/Authentication/AllowAccess/'
-    postLogin:string = 'https://localhost:7001/api/Authentication/Login'
-    // postDonorLogin:string = 'https://localhost:7081/api/Authentication/DonorLogin'
-    postRegister:string = 'https://localhost:7001/api/Authentication/Register'
-    // postDonorRegister:string = 'https://localhost:7081/api/Authentication/DonorRegister'
-     getCheckUsername:string = 'https://localhost:7001/api/Authentication/CheckUsername/'
-     postAdminLogin:string = 'https://localhost:7001/api/Authentication/AdminLogin'
+    getAllowAccess:string = `${environment.domain}/api/Authentication/AllowAccess/`
+    postLogin:string = `${environment.domain}/api/Authentication/Login`
+    postRegister:string = `${environment.domain}/api/Authentication/Register`
+     getCheckUsername:string = `${environment.domain}/api/Authentication/CheckUsername/`
+     postAdminLogin:string = `${environment.domain}/api/Authentication/AdminLogin`
 
 
     user!:UserModel | undefined;
@@ -74,37 +73,7 @@ export class AuthService{
         }));
     }
 
-    // DonorLogin(donorInfo:DonorLoginRequest)
-    // {
-    //     return this.http.post<GeneralResponse<DonorLoginResponse>>(this.postDonorLogin,donorInfo)
-    //     .pipe(
-    //         map((data) =>{
-    //         if(data) console.log(data);
-            
 
-
-    //         if(data.value)
-    //         {
-    //             this.user = {id:data.value.userId,username:data.value.username,email:'',role:data.value.role,token:data.value.jwtToken}
-    //             localStorage.setItem('User_Token_Key',data.value.jwtToken)
-    //             this.token =this.GetToken()
-    //         }
-
-    //         return data
-
-    //     })
-    //     );
-    // }
-    // DonorRegister(DonroInfo:DonorRegister)
-    // {
-    //     return this.http.post<StudentRegisterResponse>(this.postDonorRegister,DonroInfo)
-    //     .pipe(map(data=>{
-    //         this.user = {id:data.value.userId,username:data.value.username,email:DonroInfo.email,role:data.value.role,token:data.value.jwtToken}
-    //         localStorage.setItem('User_Token_Key',data.value.jwtToken)
-    //         this.token = this.GetToken()
-    //         return data;
-    //     }));
-    // }
 
     AdminLogin(login:{username:string,password:string})
     {

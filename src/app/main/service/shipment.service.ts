@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { GetTotalPriceRequest } from "../model/request/get-total-price.request";
 import { CreateShipmentRequest } from "../model/request/create-shipment.request";
 import { GeneralResponse } from "src/app/share/Model/general.response";
+import { environment } from "src/environment/environment";
 
 
 @Injectable({
@@ -12,11 +13,11 @@ import { GeneralResponse } from "src/app/share/Model/general.response";
 export class ShipmentService{
 
 
-    private getTotalPrice:string  = 'https://localhost:7001/api/Shipment/GetTotalPrice';
-    private createShipment:string = 'https://localhost:7001/api/Shipment/CreateShipment';
-    private getAllShipments:string = 'https://localhost:7001/api/Shipment/GetAll';
-    private getSingleShipment:string = 'https://localhost:7001/api/Shipment/GetSingleShipment/'
-    private acceptShipment:string = 'https://localhost:7001/api/Shipment/Accept/';
+    private getTotalPrice:string  = `${environment.domain}/api/Shipment/GetTotalPrice`;
+    private createShipment:string = `${environment.domain}/api/Shipment/CreateShipment`;
+    private getAllShipments:string = `${environment.domain}/api/Shipment/GetAll`;
+    private getSingleShipment:string = `${environment.domain}/api/Shipment/GetSingleShipment/`
+    private acceptShipment:string = `${environment.domain}/api/Shipment/Accept/`;
 
     constructor(private http:HttpClient){}
 

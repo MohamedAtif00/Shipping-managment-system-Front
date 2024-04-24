@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { environment } from "src/environment/environment";
 
 
 
@@ -8,7 +9,7 @@ import { Injectable } from "@angular/core";
 })
 export class AddressService{
 
-    getSingleAddress:string = 'https://localhost:7001/api/Address/'
+    getSingleAddress:string = `${environment.domain}/api/Address/`;
 
     constructor(private http:HttpClient){}
 
